@@ -1,0 +1,2107 @@
+/* ============================================================
+   SwiftCargo Logistics — Global Stylesheet
+   ------------------------------------------------------------
+   This is the single external CSS file used by every page of
+   the website. It is organised into logical sections so it is
+   easy to read and maintain. The whole site uses only TWO
+   brand colours: deep navy blue (#0A2A4A) and orange (#F97316).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. CSS VARIABLES + RESET
+   CSS variables let us define colours, fonts and sizes once and
+   reuse them everywhere. The reset removes default browser
+   spacing so every element starts from a clean baseline.
+   ------------------------------------------------------------ */
+:root {
+  --navy: #0a2a4a;            /* Primary brand colour — deep navy */
+  --navy-dark: #061e36;       /* Darker navy for footers/gradients */
+  --navy-light: #143d66;      /* Lighter navy for hover states */
+  --orange: #f97316;           /* Primary accent colour — orange */
+  --orange-dark: #ea580c;      /* Darker orange for hover states */
+  --orange-soft: #fff3e8;      /* Very pale orange for backgrounds */
+  --bg-light: #f5f7fa;         /* Light grey section background */
+  --white: #ffffff;
+  --text-dark: #1e293b;        /* Main body text colour */
+  --text-muted: #5b6b7b;       /* Secondary / muted text */
+  --border: #e2e8f0;           /* Light border colour */
+  --shadow-sm: 0 4px 14px rgba(10, 42, 74, 0.08);
+  --shadow-md: 0 10px 30px rgba(10, 42, 74, 0.12);
+  --shadow-lg: 0 20px 50px rgba(10, 42, 74, 0.18);
+  --radius: 14px;              /* Standard rounded-corner radius */
+  --radius-sm: 8px;
+  --container: 1200px;         /* Max width of the page content */
+  --font-head: "Poppins", "Segoe UI", Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+/* Reset: remove default margins, paddings and borders */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling for anchor links (with offset handled in JS) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Images never overflow their container */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ------------------------------------------------------------
+   2. SHARED LAYOUT UTILITIES
+   ------------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section spacing — every section gets consistent vertical rhythm */
+.section {
+  padding: 90px 0;
+}
+
+.section--light {
+  background: var(--bg-light);
+}
+
+.section--navy {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  color: var(--white);
+}
+
+/* Section heading block (eyebrow + title + subtitle) */
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 55px;
+}
+
+.section-head .eyebrow {
+  display: inline-block;
+  color: var(--orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  color: var(--text-muted);
+}
+
+/* Left-aligned variant used on inner pages */
+.section-head--left {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* ------------------------------------------------------------
+   3. BUTTONS
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+/* Solid orange button — the main call-to-action */
+.btn--primary {
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+}
+
+.btn--primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(249, 115, 22, 0.45);
+}
+
+/* Outlined navy button — secondary action */
+.btn--outline {
+  border-color: var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* White outline button for use on dark backgrounds */
+.btn--white {
+  border-color: var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn--white:hover {
+  background: var(--white);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+/* Small variant for cards */
+.btn--sm {
+  padding: 9px 20px;
+  font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------
+   4. TOP BAR (phone / email / hours strip above the navbar)
+   ------------------------------------------------------------ */
+.topbar {
+  background: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  padding: 9px 0;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar__left,
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.topbar a:hover {
+  color: var(--orange);
+}
+
+.topbar__socials {
+  display: flex;
+  gap: 12px;
+}
+
+.topbar__socials a {
+  font-size: 0.95rem;
+}
+
+/* Hide the small hint text on tiny screens */
+.topbar__hours {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ------------------------------------------------------------
+   5. NAVBAR
+   ------------------------------------------------------------ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(10, 42, 74, 0.08);
+  transition: var(--transition);
+}
+
+/* Slightly smaller navbar after scrolling (added by JS) */
+.navbar--scrolled {
+  box-shadow: 0 6px 20px rgba(10, 42, 74, 0.14);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+}
+
+/* Logo: orange icon box + wordmark */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.logo__text {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.logo__text span {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  padding: 6px 0;
+}
+
+/* Animated underline on hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--orange);
+}
+
+/* Navbar CTA button */
+.navbar .btn {
+  margin-left: 10px;
+}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--navy);
+  transition: var(--transition);
+}
+
+/* Animate the three lines into an X when the menu is open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ------------------------------------------------------------
+   6. HERO SECTION (home page landing area)
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(100deg, rgba(6, 30, 54, 0.94) 0%, rgba(10, 42, 74, 0.82) 45%, rgba(10, 42, 74, 0.35) 100%),
+    url("https://sspark.genspark.ai/i/GERHldexCp8PVN0h?width=2560") center / cover no-repeat;
+  color: var(--white);
+  padding: 120px 0 90px;
+}
+
+.hero__content {
+  max-width: 640px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #ffd9b8;
+  padding: 7px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+
+/* Orange highlight inside the headline */
+.hero h1 .accent {
+  color: var(--orange);
+}
+
+.hero p {
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 46px;
+}
+
+/* Quick "tracking" strip inside the hero */
+.track-strip {
+  display: flex;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  border-radius: var(--radius);
+  max-width: 520px;
+}
+
+.track-strip input {
+  flex: 1;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  min-width: 0;
+}
+
+.track-strip input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.track-strip .btn {
+  flex-shrink: 0;
+}
+
+/* Floating stat cards at the bottom of the hero */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 560px;
+}
+
+.hero__stat {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  backdrop-filter: blur(6px);
+}
+
+.hero__stat strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  color: var(--orange);
+}
+
+.hero__stat span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ------------------------------------------------------------
+   7. PAGE HERO (inner pages — smaller banner with big title)
+   ------------------------------------------------------------ */
+.page-hero {
+  position: relative;
+  background:
+    linear-gradient(100deg, rgba(6, 30, 54, 0.92), rgba(10, 42, 74, 0.78)),
+    url("https://sspark.genspark.ai/i/q0YHjAEm4RtkKt5d?width=2560") center / cover no-repeat;
+  color: var(--white);
+  padding: 90px 0 70px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+/* Breadcrumb trail (Home / About etc.) */
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.breadcrumb a:hover {
+  color: var(--orange);
+}
+
+.breadcrumb .sep {
+  color: var(--orange);
+}
+
+/* ------------------------------------------------------------
+   8. ABOUT INTRO (home page "who we are" split section)
+   ------------------------------------------------------------ */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-intro__media {
+  position: relative;
+}
+
+.about-intro__media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+/* Small floating experience badge on the image */
+.about-intro__badge {
+  position: absolute;
+  bottom: -24px;
+  right: -18px;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.about-intro__badge strong {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1.1;
+}
+
+.about-intro__badge span {
+  font-size: 0.8rem;
+  opacity: 0.95;
+}
+
+.about-intro__text .eyebrow {
+  color: var(--orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.about-intro__text h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.about-intro__text p {
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Small checklist of company strengths */
+.check-list {
+  margin: 22px 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.check-list li::before {
+  content: "✔";
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   9. SERVICES CARDS (grid of service cards)
+   ------------------------------------------------------------ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Individual service card */
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar that slides in on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Circular icon holder */
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-card__icon {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.service-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  margin-bottom: 16px;
+}
+
+/* "Learn more" link inside each card */
+.service-card__link {
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-card__link:hover {
+  gap: 10px;
+  color: var(--orange-dark);
+}
+
+/* ------------------------------------------------------------
+   10. WHY CHOOSE US (feature list with icons)
+   ------------------------------------------------------------ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.feature {
+  text-align: center;
+  padding: 34px 22px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature__icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.feature:hover .feature__icon {
+  background: var(--orange);
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.feature h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   11. STATS COUNTERS (animated numbers band)
+   ------------------------------------------------------------ */
+.stats-band {
+  background:
+    linear-gradient(120deg, rgba(6, 30, 54, 0.94), rgba(10, 42, 74, 0.88)),
+    url("https://sspark.genspark.ai/i/7zdNHA7NUYkfJoqb?width=2560") center / cover no-repeat;
+  color: var(--white);
+  padding: 70px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat strong {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--orange);
+  display: block;
+  line-height: 1.2;
+}
+
+.stat span {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ------------------------------------------------------------
+   12. PROCESS STEPS (how shipping works)
+   ------------------------------------------------------------ */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px 24px 28px;
+  transition: var(--transition);
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Big numbered circle */
+.step__num {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+}
+
+.step h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   13. GLOBAL COVERAGE (region cards)
+   ------------------------------------------------------------ */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.region {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 18px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.region:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--orange);
+}
+
+.region__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--orange-soft);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.region h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.region p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   14. TESTIMONIALS (slider)
+   ------------------------------------------------------------ */
+.testimonials {
+  background: var(--bg-light);
+}
+
+.testimonial-slider {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial {
+  min-width: 100%;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 40px 36px;
+  text-align: center;
+}
+
+/* Star rating row */
+.testimonial__stars {
+  color: var(--orange);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.testimonial blockquote {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  font-style: italic;
+  margin-bottom: 22px;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Circular avatar with initials */
+.testimonial__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial__author strong {
+  display: block;
+  color: var(--navy);
+  font-family: var(--font-head);
+}
+
+.testimonial__author span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Prev / next arrows */
+.testimonial__nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.testimonial__nav button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.testimonial__nav button:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* ------------------------------------------------------------
+   15. CTA BANNER (call-to-action strip)
+   ------------------------------------------------------------ */
+.cta-banner {
+  background:
+    linear-gradient(110deg, var(--orange) 0%, var(--orange-dark) 100%);
+  color: var(--white);
+  padding: 64px 0;
+}
+
+.cta-banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-banner h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 6px;
+}
+
+.cta-banner p {
+  opacity: 0.95;
+}
+
+.btn--dark {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn--dark:hover {
+  background: var(--navy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(6, 30, 54, 0.35);
+}
+
+/* ------------------------------------------------------------
+   16. FOOTER
+   ------------------------------------------------------------ */
+.footer {
+  background: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.78);
+  padding-top: 70px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer h4 {
+  font-family: var(--font-head);
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Small orange underline under each footer heading */
+.footer h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 34px;
+  height: 3px;
+  background: var(--orange);
+  border-radius: 3px;
+}
+
+.footer__about p {
+  font-size: 0.9rem;
+  margin: 16px 0 20px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.footer__socials a:hover {
+  background: var(--orange);
+  transform: translateY(-3px);
+}
+
+.footer__links li {
+  margin-bottom: 10px;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__links a::before {
+  content: "›";
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.footer__links a:hover {
+  color: var(--orange);
+  padding-left: 4px;
+}
+
+/* Footer contact rows (icon + text) */
+.footer__contact li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  align-items: flex-start;
+}
+
+.footer__contact .icon {
+  color: var(--orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Newsletter form inside the footer */
+.newsletter {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.newsletter input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.newsletter .btn {
+  flex-shrink: 0;
+  padding: 11px 18px;
+}
+
+/* Bottom copyright bar */
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.footer__bottom a:hover {
+  color: var(--orange);
+}
+
+/* ------------------------------------------------------------
+   17. ABOUT PAGE SPECIFIC
+   ------------------------------------------------------------ */
+
+/* Mission / Vision / Values cards */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.mvv-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  transition: var(--transition);
+}
+
+.mvv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv-card__icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.mvv-card h3 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.mvv-card p {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+/* Values list as a two-column checklist */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.value-item {
+  display: flex;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.value-item:hover {
+  border-color: var(--orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.value-item__icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-item h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.value-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Team members grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Photo area with a navy gradient background + initials */
+.team-card__photo {
+  height: 220px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.team-card__body {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-card__body h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.team-card__body span {
+  display: block;
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 10px;
+}
+
+.team-card__body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ------------------------------------------------------------
+   18. SERVICES PAGE SPECIFIC
+   ------------------------------------------------------------ */
+
+/* Large alternating service rows (image + text) */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.service-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse the order for alternating rows */
+.service-row--reverse .service-row__media {
+  order: 2;
+}
+
+.service-row__media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.service-row__body .eyebrow {
+  color: var(--orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.service-row__body h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.service-row__body p {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* Benefits checklist inside service rows */
+.benefits {
+  margin: 16px 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.benefits li::before {
+  content: "✔";
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   19. GALLERY PAGE
+   ------------------------------------------------------------ */
+
+/* Filter buttons */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-dark);
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.filter-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* Masonry-like gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  height: 260px;
+}
+
+/* Tall tiles for visual variety */
+.gallery-item--tall {
+  height: 360px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Dark overlay + caption that fades in on hover */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 30, 54, 0.85), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-item__overlay {
+  opacity: 1;
+}
+
+.gallery-item__overlay h3 {
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+}
+
+.gallery-item__overlay span {
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Lightbox (full-screen image viewer) */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 30, 54, 0.94);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox__caption {
+  position: absolute;
+  bottom: 24px;
+  color: var(--white);
+  font-family: var(--font-head);
+}
+
+/* ------------------------------------------------------------
+   20. CONTACT PAGE
+   ------------------------------------------------------------ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Contact info cards (phone / email / address / hours) */
+.contact-info {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  border-color: var(--orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card__icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.contact-card p,
+.contact-card a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-card a:hover {
+  color: var(--orange);
+}
+
+/* The contact form panel */
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 36px;
+}
+
+.contact-form h2 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.contact-form > p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 24px;
+}
+
+/* Form field group */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Focus state — orange border glow */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--orange);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* Two fields side by side */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Error + success message styles (added by JS) */
+.form-group .error-msg {
+  color: #dc2626;
+  font-size: 0.82rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.form-group.invalid input,
+.form-group.invalid textarea {
+  border-color: #dc2626;
+}
+
+.form-group.invalid .error-msg {
+  display: block;
+}
+
+.form-success {
+  display: none;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+.form-success.show {
+  display: block;
+}
+
+/* Map embed wrapper */
+.map-wrap {
+  margin-top: 70px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   21. FAQ ACCORDION
+   ------------------------------------------------------------ */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.open {
+  border-color: var(--orange);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Question button — the whole header is clickable */
+.faq-item__q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--navy);
+  text-align: left;
+}
+
+/* Plus icon that rotates into a minus */
+.faq-item__q .plus {
+  color: var(--orange);
+  font-size: 1.4rem;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-item__q .plus {
+  transform: rotate(45deg);
+}
+
+/* Answer — hidden by default, expanded by JS */
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item__a p {
+  padding: 0 24px 20px;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+/* ------------------------------------------------------------
+   22. TRACKING SECTION (home + tracking widget)
+   ------------------------------------------------------------ */
+.tracking-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 40px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tracking-panel h2 {
+  font-family: var(--font-head);
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.tracking-panel > p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.tracking-form {
+  display: flex;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.tracking-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.tracking-form input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Simulated tracking result (shown by JS) */
+.tracking-result {
+  display: none;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.tracking-result.show {
+  display: block;
+}
+
+.tracking-result__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.tracking-result__header strong {
+  color: var(--navy);
+  font-family: var(--font-head);
+}
+
+/* Status pill */
+.status-pill {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* Horizontal progress steps */
+.tracking-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Connecting line behind the dots */
+.tracking-steps::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: var(--border);
+}
+
+.tracking-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  flex: 1;
+}
+
+.tracking-step__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--border);
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* Completed steps are navy with a check */
+.tracking-step.done .tracking-step__dot {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+/* The current step is orange */
+.tracking-step.current .tracking-step__dot {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.tracking-step span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.tracking-step.done span,
+.tracking-step.current span {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   23. BACK-TO-TOP BUTTON
+   ------------------------------------------------------------ */
+.back-to-top {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: var(--transition);
+  z-index: 900;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--orange-dark);
+  transform: translateY(-3px);
+}
+
+/* ------------------------------------------------------------
+   24. SCROLL-REVEAL ANIMATIONS
+   Elements start hidden and fade/slide in when scrolled into
+   view. The .revealed class is added by JavaScript.
+   ------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delay helpers */
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ------------------------------------------------------------
+   25. RESPONSIVE DESIGN (mobile / tablet breakpoints)
+   ------------------------------------------------------------ */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .coverage-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-intro { grid-template-columns: 1fr; gap: 50px; }
+  .about-intro__badge { right: 10px; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .service-row { grid-template-columns: 1fr; gap: 30px; }
+  .service-row--reverse .service-row__media { order: 0; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+
+  /* Convert the navbar into a mobile menu */
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 10px 24px 24px;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-140%);
+    transition: transform 0.35s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links a::after { display: none; }
+
+  .nav-links .btn {
+    margin: 18px 0 0;
+    width: 100%;
+  }
+
+  .topbar__hours { display: none; }
+  .topbar__left { gap: 14px; }
+
+  .hero { min-height: auto; padding: 90px 0 70px; }
+  .hero__stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .hero__stat strong { font-size: 1.15rem; }
+  .hero__stat span { font-size: 0.72rem; }
+  .track-strip { flex-direction: column; }
+
+  .services-grid,
+  .features-grid,
+  .process-grid,
+  .mvv-grid,
+  .values-grid,
+  .team-grid { grid-template-columns: 1fr; }
+
+  .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item,
+  .gallery-item--tall { height: 240px; }
+
+  .footer__grid { grid-template-columns: 1fr; gap: 34px; }
+  .footer__bottom { justify-content: center; text-align: center; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 26px 20px; }
+  .tracking-form { flex-direction: column; }
+  .tracking-steps { flex-wrap: wrap; gap: 14px; }
+  .tracking-steps::before { display: none; }
+
+  .cta-banner .container { justify-content: center; text-align: center; }
+  .benefits { grid-template-columns: 1fr; }
+  .about-intro__badge { right: 6px; padding: 14px 18px; }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  .hero__stats { grid-template-columns: 1fr; }
+  .coverage-grid { grid-template-columns: 1fr; }
+  .check-list { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .topbar__right { display: none; }
+}

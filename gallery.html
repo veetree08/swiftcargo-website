@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- ============================================================
+   SwiftCargo Logistics — Gallery Page
+   Filterable image gallery with a full-screen lightbox viewer.
+   ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | SwiftCargo Logistics</title>
+  <meta name="description" content="Browse the SwiftCargo Logistics gallery — cargo ships, air freight, delivery trucks, warehouses, containers and our global operations in action.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__left">
+        <a href="tel:+18005550199">📞 +1 (800) 555-0199</a>
+        <a href="mailto:info@swiftcargo.com">✉️ info@swiftcargo.com</a>
+        <span class="topbar__hours">🕘 Mon–Sat: 8:00 – 20:00</span>
+      </div>
+      <div class="topbar__right">
+        <span>Follow us:</span>
+        <div class="topbar__socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter / X">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="SwiftCargo Logistics home">
+        <span class="logo__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </span>
+        <span class="logo__text">SwiftCargo<span>Logistics</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Get a Quote</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Our Gallery</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span class="sep">/</span><span>Gallery</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">In Action</span>
+          <h2>SwiftCargo in Pictures</h2>
+          <p>A look at our ships, planes, trucks, warehouses and the people who keep global trade moving.</p>
+        </div>
+
+        <!-- Filter buttons (wired up in JavaScript) -->
+        <div class="gallery-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="sea">Sea Freight</button>
+          <button class="filter-btn" data-filter="air">Air Freight</button>
+          <button class="filter-btn" data-filter="road">Road &amp; Delivery</button>
+          <button class="filter-btn" data-filter="warehouse">Warehousing</button>
+          <button class="filter-btn" data-filter="containers">Containers</button>
+        </div>
+
+        <!-- Gallery grid. Each tile has a data-category used for filtering -->
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item--tall reveal" data-category="sea">
+            <img src="https://sspark.genspark.ai/i/q0YHjAEm4RtkKt5d?width=2560" alt="Aerial view of a busy container port with ships and cranes">
+            <div class="gallery-item__overlay"><h3>Container Port Operations</h3><span>Sea Freight</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="air">
+            <img src="https://sspark.genspark.ai/i/24DqdgVBI2Q8Y8du?width=2560" alt="Cargo being loaded into a freighter aircraft">
+            <div class="gallery-item__overlay"><h3>Air Freight Loading</h3><span>Air Freight</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="containers">
+            <img src="https://sspark.genspark.ai/i/7zdNHA7NUYkfJoqb?width=2560" alt="Colorful stacked shipping containers at a terminal">
+            <div class="gallery-item__overlay"><h3>Shipping Containers</h3><span>Containers</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="warehouse">
+            <img src="https://sspark.genspark.ai/i/GLC6HW3ppmHQblKs?width=2560" alt="Forklift operator moving pallets inside a warehouse">
+            <div class="gallery-item__overlay"><h3>Warehouse Operations</h3><span>Warehousing</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="road">
+            <img src="https://sspark.genspark.ai/i/1cqjkRa0M5zYnxTc?width=2560" alt="Box trucks driving along a highway">
+            <div class="gallery-item__overlay"><h3>Road Freight Fleet</h3><span>Road &amp; Delivery</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall reveal" data-category="sea">
+            <img src="https://sspark.genspark.ai/i/yap5Lby29tILNQe1?width=2560" alt="Large container ship sailing along a river">
+            <div class="gallery-item__overlay"><h3>Ocean Cargo Ship</h3><span>Sea Freight</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="air">
+            <img src="https://sspark.genspark.ai/i/XJ4fOz91FahakvrB?width=2560" alt="Airplane being loaded with cargo pallets">
+            <div class="gallery-item__overlay"><h3>Aircraft Cargo Loading</h3><span>Air Freight</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="containers">
+            <img src="https://sspark.genspark.ai/i/YNbpcW5J0ZBufY2q?width=2560" alt="Stack of orange intermodal shipping containers">
+            <div class="gallery-item__overlay"><h3>Intermodal Containers</h3><span>Containers</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="road">
+            <img src="https://sspark.genspark.ai/i/RXchYvw4EWGHkFdN?width=2560" alt="White delivery van driving on a highway">
+            <div class="gallery-item__overlay"><h3>Express Delivery Van</h3><span>Road &amp; Delivery</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="warehouse">
+            <img src="https://sspark.genspark.ai/i/3GlhLCV02R1KC83t?width=2560" alt="Forklift operator shuttling a pallet loaded with boxes">
+            <div class="gallery-item__overlay"><h3>Pallet Handling</h3><span>Warehousing</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall reveal" data-category="air">
+            <img src="https://sspark.genspark.ai/i/Je71QCawMB4MRy65?width=2560" alt="Commercial aircraft at an airport apron during cargo operations">
+            <div class="gallery-item__overlay"><h3>Air Cargo Gateway</h3><span>Air Freight</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="road">
+            <img src="https://sspark.genspark.ai/i/nJSCZ2dzpCmCgW7V?width=2560" alt="Delivery truck in motion on a highway">
+            <div class="gallery-item__overlay"><h3>Fast Delivery</h3><span>Road &amp; Delivery</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="containers">
+            <img src="https://sspark.genspark.ai/i/luxS2VcL9FlGbRMU?width=2560" alt="Stack of shipping containers at a storage yard">
+            <div class="gallery-item__overlay"><h3>Container Storage</h3><span>Containers</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="sea">
+            <img src="https://sspark.genspark.ai/i/da0xJPVEYI1MalwE?width=2560" alt="Container ship docked at a port">
+            <div class="gallery-item__overlay"><h3>Port of Call</h3><span>Sea Freight</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="road">
+            <img src="https://sspark.genspark.ai/i/emUhXxzpnoi4W5bF?width=2560" alt="Cargo truck and trailer parked in a logistics yard">
+            <div class="gallery-item__overlay"><h3>Freight Yard</h3><span>Road &amp; Delivery</span></div>
+          </div>
+          <div class="gallery-item reveal" data-category="warehouse">
+            <img src="https://sspark.genspark.ai/i/BDKsVUYw2pgboO83?width=2560" alt="Courier delivering a parcel to a customer">
+            <div class="gallery-item__overlay"><h3>Last-Mile Delivery</h3><span>Warehousing</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall reveal" data-category="containers">
+            <img src="https://sspark.genspark.ai/i/R2Ta9Gv4zvGr9JS6?width=2560" alt="Container cranes loading cargo at a port terminal">
+            <div class="gallery-item__overlay"><h3>Port Cranes</h3><span>Containers</span></div>
+          </div>
+          <div class="gallery-item reveal reveal-d1" data-category="road">
+            <img src="https://sspark.genspark.ai/i/3aoGIl59mzoXpWHR?width=2560" alt="Logistics worker handling a cardboard package">
+            <div class="gallery-item__overlay"><h3>Package Handling</h3><span>Road &amp; Delivery</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-banner">
+      <div class="container">
+        <div>
+          <h2>Want to See More of What We Do?</h2>
+          <p>Get in touch and we'll show you how SwiftCargo can move your business.</p>
+        </div>
+        <div class="hero__actions" style="margin:0;">
+          <a href="contact.html" class="btn btn--dark">Get a Quote</a>
+          <a href="tel:+18005550199" class="btn btn--white">Call Us Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full-screen lightbox viewer (opened by JavaScript) -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close image">×</button>
+    <img src="" alt="Enlarged gallery image">
+    <div class="lightbox__caption"></div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="logo" aria-label="SwiftCargo Logistics home">
+            <span class="logo__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+            <span class="logo__text" style="color:#fff;">SwiftCargo<span>Logistics</span></span>
+          </a>
+          <p>Fast, secure and reliable shipping to 190+ countries. Air, sea and road freight with real-time tracking and 24/7 support.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter / X">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">◎</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Air Freight</a></li>
+            <li><a href="services.html">Sea Freight</a></li>
+            <li><a href="services.html">Road Transport</a></li>
+            <li><a href="services.html">Express Delivery</a></li>
+            <li><a href="services.html">Warehousing</a></li>
+            <li><a href="services.html">Customs Clearance</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer__contact">
+            <li><span class="icon">📍</span> 450 Harbor Boulevard, Suite 1200,<br>Miami, FL 33132, USA</li>
+            <li><span class="icon">📞</span> <a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+            <li><span class="icon">✉️</span> <a href="mailto:info@swiftcargo.com">info@swiftcargo.com</a></li>
+            <li><span class="icon">🕘</span> Mon–Sat: 8:00 – 20:00</li>
+          </ul>
+          <h4 style="margin-top:22px;">Newsletter</h4>
+          <form class="newsletter" aria-label="Newsletter subscription">
+            <input type="email" placeholder="Your email address" aria-label="Email address">
+            <button type="submit" class="btn btn--primary btn--sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 SwiftCargo Logistics. All rights reserved.</span>
+        <span><a href="#">Privacy Policy</a> &nbsp;•&nbsp; <a href="#">Terms of Service</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

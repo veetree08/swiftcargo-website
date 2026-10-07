@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<!-- ============================================================
+   SwiftCargo Logistics — Home Page
+   The landing page. Contains the hero, company intro, services,
+   stats, why-choose-us, process, tracking, coverage, testimonials,
+   FAQ and a call-to-action, plus the shared footer.
+   ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO: page title shown in browser tabs and search results -->
+  <title>SwiftCargo Logistics | Global Shipping, Freight &amp; Delivery Services</title>
+  <!-- SEO: short description shown under the title in search results -->
+  <meta name="description" content="SwiftCargo Logistics delivers fast, secure and reliable air freight, sea freight, road transport and express delivery across 190+ countries. Get a quote or track your shipment today.">
+  <!-- Google Fonts: Poppins for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- The single external stylesheet used by every page -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================
+       TOP BAR — phone, email and opening hours strip
+       ========================================================== -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__left">
+        <a href="tel:+18005550199">📞 +1 (800) 555-0199</a>
+        <a href="mailto:info@swiftcargo.com">✉️ info@swiftcargo.com</a>
+        <span class="topbar__hours">🕘 Mon–Sat: 8:00 – 20:00</span>
+      </div>
+      <div class="topbar__right">
+        <span>Follow us:</span>
+        <div class="topbar__socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter / X">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       NAVBAR — logo, page links and the "Get a Quote" button
+       ========================================================== -->
+  <header class="navbar">
+    <div class="container">
+      <!-- Company logo: orange icon box + wordmark -->
+      <a href="index.html" class="logo" aria-label="SwiftCargo Logistics home">
+        <span class="logo__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </span>
+        <span class="logo__text">SwiftCargo<span>Logistics</span></span>
+      </a>
+
+      <!-- Navigation links (desktop). The active page gets .active -->
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Get a Quote</a>
+      </nav>
+
+      <!-- Hamburger button — only visible on mobile screens -->
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         HERO — the big landing section with headline and CTAs
+         ========================================================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__badge">🚢 Trusted by 12,000+ businesses worldwide</span>
+          <h1>Moving Your World, <span class="accent">Delivering Trust</span></h1>
+          <p>SwiftCargo Logistics connects your business to the world with fast, secure and reliable air, sea and road freight — backed by real-time tracking and a dedicated team that treats every shipment like its own.</p>
+
+          <!-- Primary + secondary call-to-action buttons -->
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary">Get a Quote</a>
+            <a href="#tracking" class="btn btn--white">Track Shipment</a>
+          </div>
+
+          <!-- Quick tracking strip inside the hero -->
+          <form class="track-strip" role="search" aria-label="Track a shipment">
+            <input type="text" placeholder="Enter tracking number e.g. SC-2026-88412" aria-label="Tracking number">
+            <button type="submit" class="btn btn--primary btn--sm">Track</button>
+          </form>
+
+          <!-- Floating mini-stat cards -->
+          <div class="hero__stats">
+            <div class="hero__stat"><strong>190+</strong><span>Countries served</span></div>
+            <div class="hero__stat"><strong>99.8%</strong><span>On-time delivery</span></div>
+            <div class="hero__stat"><strong>24/7</strong><span>Support team</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         ABOUT INTRO — who the company is
+         ========================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="about-intro">
+          <!-- Image with a floating experience badge -->
+          <div class="about-intro__media reveal">
+            <img src="https://sspark.genspark.ai/i/yap5Lby29tILNQe1?width=2560" alt="A large container ship sailing along a river, representing our global sea freight network">
+            <div class="about-intro__badge">
+              <strong>25+</strong>
+              <span>Years of Experience</span>
+            </div>
+          </div>
+
+          <!-- Text side -->
+          <div class="about-intro__text reveal reveal-d1">
+            <span class="eyebrow">Welcome to SwiftCargo</span>
+            <h2>Your Global Partner in Shipping &amp; Logistics</h2>
+            <p>Since 2001, SwiftCargo Logistics has helped businesses of every size move goods across borders with confidence. From a single parcel to full container loads, we combine modern technology with old-fashioned care to make shipping simple, transparent and dependable.</p>
+            <p>Our integrated network of warehouses, partner carriers and customs specialists means one team handles your cargo from pickup to final delivery — so you always know who to call.</p>
+
+            <!-- Checklist of key strengths -->
+            <ul class="check-list">
+              <li>Door-to-door delivery</li>
+              <li>Real-time tracking</li>
+              <li>Insured shipments</li>
+              <li>Customs clearance</li>
+            </ul>
+
+            <a href="about.html" class="btn btn--primary">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SERVICES — featured service cards
+         ========================================================== -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What We Do</span>
+          <h2>Our Shipping Services</h2>
+          <p>One partner for every mode of transport — air, sea and road — plus warehousing, customs and last-mile delivery.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Air freight card -->
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+            </div>
+            <h3>Air Freight</h3>
+            <p>Time-critical shipments flown on scheduled and chartered cargo flights, with expedited customs handling at every gateway.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+
+          <!-- Sea freight card -->
+          <article class="service-card reveal reveal-d1">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16c.5.5 1.5.5 2 0s1.5-.5 2 0 1.5.5 2 0 1.5-.5 2 0 1.5.5 2 0 1.5-.5 2 0 1.5.5 2 0 1.5-.5 2 0 1.5.5 2 0 1.5-.5 2 0 1.5.5 2 0"/><path d="M4 19h16M3 12l3-6h5l3 6M3 12h18"/></svg>
+            </div>
+            <h3>Sea Freight</h3>
+            <p>Full container load (FCL) and less-than-container load (LCL) ocean shipping to every major port, with flexible schedules.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+
+          <!-- Road transport card -->
+          <article class="service-card reveal reveal-d2">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3>Road Transportation</h3>
+            <p>Dedicated trucks, vans and flatbeds for regional and cross-border freight with GPS-tracked, temperature-controlled options.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+
+          <!-- Express delivery card -->
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            </div>
+            <h3>Express Delivery</h3>
+            <p>Same-day and next-day courier service for urgent parcels, documents and e-commerce orders across the country.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+
+          <!-- Warehousing card -->
+          <article class="service-card reveal reveal-d1">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/></svg>
+            </div>
+            <h3>Warehousing</h3>
+            <p>Secure, modern storage facilities with inventory management, pick &amp; pack and fulfilment services.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+
+          <!-- Customs clearance card -->
+          <article class="service-card reveal reveal-d2">
+            <div class="service-card__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Customs Clearance</h3>
+            <p>Expert handling of import and export documentation, duties and compliance so your cargo clears quickly.</p>
+            <a href="services.html" class="service-card__link">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         STATS BAND — animated company statistics
+         ========================================================== -->
+    <section class="stats-band">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- Each number counts up when scrolled into view -->
+          <div class="stat reveal"><strong><span data-count="250000">0</span>+</strong><span>Shipments delivered yearly</span></div>
+          <div class="stat reveal reveal-d1"><strong><span data-count="190">0</span>+</strong><span>Countries &amp; territories</span></div>
+          <div class="stat reveal reveal-d2"><strong><span data-count="1200">0</span>+</strong><span>Dedicated team members</span></div>
+          <div class="stat reveal reveal-d3"><strong><span data-count="25">0</span>+</strong><span>Years in operation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         WHY CHOOSE US — feature grid
+         ========================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2>The SwiftCargo Advantage</h2>
+          <p>We built our reputation on the things that matter most to shippers — speed, safety, transparency and people who answer the phone.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature reveal">
+            <div class="feature__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            </div>
+            <h3>Speed You Can Rely On</h3>
+            <p>Optimised routes and dedicated fleets keep transit times short and deliveries on schedule.</p>
+          </div>
+          <div class="feature reveal reveal-d1">
+            <div class="feature__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Security First</h3>
+            <p>Every shipment is insured and handled in monitored facilities with strict chain-of-custody.</p>
+          </div>
+          <div class="feature reveal reveal-d2">
+            <div class="feature__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+            </div>
+            <h3>Global Coverage</h3>
+            <p>A partner network spanning 190+ countries means we can reach almost anywhere on Earth.</p>
+          </div>
+          <div class="feature reveal reveal-d3">
+            <div class="feature__icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3>24/7 Customer Care</h3>
+            <p>Real people, around the clock, who know your account and your cargo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PROCESS — how our shipping works (4 steps)
+         ========================================================== -->
+    <section class="section section--light">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How It Works</span>
+          <h2>Our Shipping Process</h2>
+          <p>From first quote to final delivery, we keep the process simple and transparent at every step.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step reveal">
+            <div class="step__num">1</div>
+            <h3>Request a Quote</h3>
+            <p>Tell us what you're shipping and where. We respond with a clear, competitive quote within hours.</p>
+          </div>
+          <div class="step reveal reveal-d1">
+            <div class="step__num">2</div>
+            <h3>We Pick Up</h3>
+            <p>Our team collects your cargo, packs it securely and prepares all the required documentation.</p>
+          </div>
+          <div class="step reveal reveal-d2">
+            <div class="step__num">3</div>
+            <h3>Ship &amp; Track</h3>
+            <p>Your freight moves by air, sea or road while you follow every milestone in real time.</p>
+          </div>
+          <div class="step reveal reveal-d3">
+            <div class="step__num">4</div>
+            <h3>Delivered</h3>
+            <p>We clear customs and deliver to your door — with proof of delivery and full support after.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         TRACKING — shipment tracking simulator
+         ========================================================== -->
+    <section class="section" id="tracking">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Track Your Shipment</span>
+          <h2>Know Where Your Cargo Is — Always</h2>
+          <p>Enter your tracking number below to see the live status of your shipment.</p>
+        </div>
+
+        <div class="tracking-panel reveal">
+          <form class="tracking-form" role="search" aria-label="Track a shipment">
+            <input type="text" placeholder="Enter tracking number e.g. SC-2026-88412" aria-label="Tracking number">
+            <button type="submit" class="btn btn--primary">Track Shipment</button>
+          </form>
+
+          <!-- Simulated result shown by JavaScript -->
+          <div class="tracking-result">
+            <div class="tracking-result__header">
+              <strong>Shipment <span class="tracking-result__number">SC-2026-88412</span></strong>
+              <span class="status-pill">● In Transit</span>
+            </div>
+            <div class="tracking-steps">
+              <div class="tracking-step done"><div class="tracking-step__dot">✓</div><span>Picked Up</span></div>
+              <div class="tracking-step done"><div class="tracking-step__dot">✓</div><span>In Transit</span></div>
+              <div class="tracking-step current"><div class="tracking-step__dot">◉</div><span>Customs</span></div>
+              <div class="tracking-step"><div class="tracking-step__dot"></div><span>Out for Delivery</span></div>
+              <div class="tracking-step"><div class="tracking-step__dot"></div><span>Delivered</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         GLOBAL COVERAGE — regions we serve
+         ========================================================== -->
+    <section class="section section--navy">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Global Coverage</span>
+          <h2 style="color:#fff;">Shipping to Every Corner of the World</h2>
+          <p style="color:rgba(255,255,255,0.8);">Our integrated network connects major trade lanes across every continent.</p>
+        </div>
+
+        <div class="coverage-grid">
+          <div class="region reveal">
+            <div class="region__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h3>North America</h3>
+            <p>USA, Canada, Mexico</p>
+          </div>
+          <div class="region reveal reveal-d1">
+            <div class="region__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+            <h3>Europe</h3>
+            <p>EU, UK, Scandinavia</p>
+          </div>
+          <div class="region reveal reveal-d2">
+            <div class="region__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3>Asia Pacific</h3>
+            <p>China, Japan, SE Asia</p>
+          </div>
+          <div class="region reveal reveal-d3">
+            <div class="region__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg></div>
+            <h3>Middle East</h3>
+            <p>UAE, Saudi, Qatar</p>
+          </div>
+          <div class="region reveal reveal-d3">
+            <div class="region__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C7 7 4 11 4 15a8 8 0 0 0 16 0c0-4-3-8-8-13z"/></svg></div>
+            <h3>Africa &amp; LatAm</h3>
+            <p>South Africa, Brazil, Chile</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         TESTIMONIALS — customer slider
+         ========================================================== -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Testimonials</span>
+          <h2>What Our Customers Say</h2>
+          <p>Real feedback from businesses that trust SwiftCargo with their freight.</p>
+        </div>
+
+        <div class="testimonial-slider reveal">
+          <div class="testimonial-track">
+            <!-- Slide 1 -->
+            <div class="testimonial">
+              <div class="testimonial__stars">★★★★★</div>
+              <blockquote>"SwiftCargo moved our entire production line from Shanghai to Houston without a single delay. Their tracking updates meant we always knew exactly where everything was. Truly professional."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">MR</div>
+                <div><strong>Maria Rodriguez</strong><span>Operations Director, NovaTech Manufacturing</span></div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testimonial">
+              <div class="testimonial__stars">★★★★★</div>
+              <blockquote>"We ship hundreds of parcels a week and SwiftCargo's express service has cut our delivery times in half. Their support team answers in minutes, not days."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">JD</div>
+                <div><strong>James Doyle</strong><span>Founder, Atlas E-Commerce</span></div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="testimonial">
+              <div class="testimonial__stars">★★★★★</div>
+              <blockquote>"From customs clearance to last-mile delivery, everything was handled flawlessly. It's rare to find a logistics partner that feels like part of your own team."</blockquote>
+              <div class="testimonial__author">
+                <div class="testimonial__avatar">AK</div>
+                <div><strong>Aisha Khan</strong><span>Supply Chain Lead, Meridian Foods</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prev / next arrows -->
+          <div class="testimonial__nav">
+            <button class="testimonial__prev" aria-label="Previous testimonial">←</button>
+            <button class="testimonial__next" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         FAQ — accordion of common questions
+         ========================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers to the questions we hear most often.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <!-- Each .faq-item is one question/answer pair -->
+          <div class="faq-item">
+            <button class="faq-item__q">How do I get a shipping quote?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>Simply visit our Contact page, tell us what you're shipping, the origin and destination, and our team will respond with a detailed quote — usually within a few business hours.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__q">How can I track my shipment?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>Every shipment gets a unique tracking number. Enter it in the tracking box on our homepage or in the Tracking section to see real-time status updates at each milestone.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__q">Are my goods insured during shipping?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>Yes. Every shipment is covered by our cargo insurance, and you can add enhanced coverage for high-value goods. Our team will explain the options when you book.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__q">Do you handle customs clearance?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>Absolutely. Our in-house customs specialists prepare all documentation, calculate duties and manage compliance so your cargo clears customs quickly and without surprises.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__q">What is the difference between FCL and LCL sea freight?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>FCL (Full Container Load) means your cargo occupies an entire container — ideal for large volumes. LCL (Less than Container Load) shares a container with other shippers, perfect for smaller shipments.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__q">Do you deliver to remote or rural locations?<span class="plus">+</span></button>
+            <div class="faq-item__a"><p>Yes. Through our partner network we reach 190+ countries, including remote and rural areas. Delivery times may vary, and we'll always confirm the schedule before dispatch.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CTA BANNER — final call to action
+         ========================================================== -->
+    <section class="cta-banner">
+      <div class="container">
+        <div>
+          <h2>Ready to Ship with SwiftCargo?</h2>
+          <p>Get a free quote in minutes — or talk to our team about your logistics needs.</p>
+        </div>
+        <div class="hero__actions" style="margin:0;">
+          <a href="contact.html" class="btn btn--dark">Get a Quote</a>
+          <a href="tel:+18005550199" class="btn btn--white">Call Us Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER — shared across every page
+       ========================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Company info + social links -->
+        <div class="footer__about">
+          <a href="index.html" class="logo" aria-label="SwiftCargo Logistics home">
+            <span class="logo__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+            <span class="logo__text" style="color:#fff;">SwiftCargo<span>Logistics</span></span>
+          </a>
+          <p>Fast, secure and reliable shipping to 190+ countries. Air, sea and road freight with real-time tracking and 24/7 support.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter / X">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">◎</a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Services list -->
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Air Freight</a></li>
+            <li><a href="services.html">Sea Freight</a></li>
+            <li><a href="services.html">Road Transport</a></li>
+            <li><a href="services.html">Express Delivery</a></li>
+            <li><a href="services.html">Warehousing</a></li>
+            <li><a href="services.html">Customs Clearance</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact info + newsletter -->
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer__contact">
+            <li><span class="icon">📍</span> 450 Harbor Boulevard, Suite 1200,<br>Miami, FL 33132, USA</li>
+            <li><span class="icon">📞</span> <a href="tel:+18005550199">+1 (800) 555-0199</a></li>
+            <li><span class="icon">✉️</span> <a href="mailto:info@swiftcargo.com">info@swiftcargo.com</a></li>
+            <li><span class="icon">🕘</span> Mon–Sat: 8:00 – 20:00</li>
+          </ul>
+          <h4 style="margin-top:22px;">Newsletter</h4>
+          <form class="newsletter" aria-label="Newsletter subscription">
+            <input type="email" placeholder="Your email address" aria-label="Email address">
+            <button type="submit" class="btn btn--primary btn--sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Copyright bar -->
+      <div class="footer__bottom">
+        <span>© 2026 SwiftCargo Logistics. All rights reserved.</span>
+        <span><a href="#">Privacy Policy</a> &nbsp;•&nbsp; <a href="#">Terms of Service</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating back-to-top button (shown after scrolling) -->
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- The single external JavaScript file -->
+  <script src="js/script.js"></script>
+</body>
+</html>
